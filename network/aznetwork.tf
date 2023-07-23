@@ -15,5 +15,5 @@ resource "azurerm_subnet" "tfmodule-subnet" {
   name = each.key
   resource_group_name = var.resourcegroup_name
   virtual_network_name = var.vnetname
-  address_prefixes = [cidrsubnets(var.vnetaddress,8,index(tolist(var.subnetnames),each.key))]
+  address_prefixes = [cidrsubnets(var.vnetaddress,8,index(toset(var.subnetnames),each.key))]
 }
