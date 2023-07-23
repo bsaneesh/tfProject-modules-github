@@ -1,3 +1,8 @@
+
+provider "azurerm" {
+  features {}
+  }
+  
 resource "azurerm_virtual_network" "tfmodule-vnet" {
     name = var.vnetname
     location = var.location
