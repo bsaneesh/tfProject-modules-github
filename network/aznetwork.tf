@@ -7,7 +7,7 @@ resource "azurerm_virtual_network" "tfmodule-vnet" {
 }
 
 resource "azurerm_subnet" "tfmodule-subnet" {
-  for_each = var.subnetname
+  for_each = var.subnetnames
   name = each.key
   resource_group_name = var.resourcegroup_name
   virtual_network_name = var.vnetname
