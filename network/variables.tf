@@ -23,3 +23,20 @@ variable "subnetnames" {
     type = set(string)
     description = "subnet names"
 }
+
+variable "bastion_required" {
+    type = bool
+    description = "to define if bastion is required"
+    default = false
+  
+}
+
+variable "bastionpipname" {
+    type = string
+    description = "Bastion public ip name"
+}
+
+variable "bastionhostname" {
+    type = string
+    description = "Bastion host name"
+}
