@@ -14,7 +14,7 @@ resource "azurerm_subnet_network_security_group_association" "tfproject-nsgtosub
 
 
 resource "azurerm_network_security_rule" "tfproject-nsgrules" {
-  for_each = {for rule in var.nsgrules:rule.id=>rule} # this will take "id" parameter in the nsgrule module call as the "key" and rest of the parameters as "values"
+  for_each = {for rule in var.nsgrules:rule.id=>rule} # this will take "id" parameter in the "nsgrule module call block " as the "key" and rest of the parameters as "values"
   name                        = "${each.value.access}-${each.value.destination_port_range}"
   priority                    = "${each.value.priority}"
   direction                   = "Inbound"
