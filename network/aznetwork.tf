@@ -21,7 +21,7 @@ resource "azurerm_subnet" "tfmodule-subnet" {
 resource "azurerm_subnet" "tfmodule-bastion-subnet" {
   count = var.bastion_required ? 1 : 0
   name                 = "AzureBastionSubnet"
-  resource_group_name  = var.location
+  resource_group_name  = var.resourcegroup_name
   virtual_network_name = var.vnetname
   address_prefixes     = [cidrsubnet(var.vnetaddress,8,10)]
 
