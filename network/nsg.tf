@@ -8,7 +8,7 @@ resource "azurerm_network_security_group" "tfproject-nsg" {
 resource "azurerm_subnet_network_security_group_association" "tfproject-nsgtosubnet" {
   for_each = var.nsgnames
   subnet_id                 = azurerm_subnet.tfmodule-subnet[each.value].id
-  network_security_group_id = azurerm_network_security_group.tfproject-nsg[each.key].id
+  network_security_group_id = azurerm_network_security_group.tfproject-nsg["tf-project-${each.key}-nsg"].id
 }
 
 
