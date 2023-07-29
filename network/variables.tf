@@ -30,13 +30,3 @@ variable "bastion_required" {
     default = false
   
 }
-
-variable "bastionpipname" {
-    type = string
-    description = "Bastion public ip name"
-}
-
-variable "bastionhostname" {
-    type = string
-    description = "Bastion host name"
-}

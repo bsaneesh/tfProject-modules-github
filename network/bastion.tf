@@ -1,6 +1,6 @@
 resource "azurerm_public_ip" "tfmodule-bastionPip" {
   count = var.bastion_required ? 1 : 0
-  name                = var.bastionpipname
+  name                = "tfproject-bastion-pip"
   location            = var.location
   resource_group_name = var.resourcegroup_name
   allocation_method   = "Static"
@@ -9,7 +9,7 @@ resource "azurerm_public_ip" "tfmodule-bastionPip" {
 
 resource "azurerm_bastion_host" "tfmodule-bastionhost" {
   count = var.bastion_required ? 1 : 0
-  name                = var.bastionhostname
+  name                = "tf-project-bastion"
   location            = var.location
   resource_group_name = var.resourcegroup_name
 
