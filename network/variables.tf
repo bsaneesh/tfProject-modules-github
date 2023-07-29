@@ -30,3 +30,15 @@ variable "bastion_required" {
     default = false
   
 }
+
+variable "nsgnames" {
+    type = map(string)
+    description = "NSG resource names"
+  
+}
+
+variable "nsgrules" {
+    type = list
+    description = "nsg group rules"
+  
+}
